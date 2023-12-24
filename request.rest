@@ -1,0 +1,31 @@
+### Refresh Token
+GET http://localhost:8000/api/token
+
+
+### login
+POST http://localhost:8000/api/login
+Content-Type: application/json
+
+{
+    "userName":"adel.orosia",
+    "password":"1234"
+}
+
+### Register
+POST http://localhost:8000/api/register
+Content-Type: application/json
+
+{
+    "firstName":"Adel",
+    "lastName":"Namazi",
+    "userName":"adel.orosia",
+    "email":"adel_orosia@yahoo.com",
+    "password":"1234"
+}
+
+### Get All Users
+GET http://localhost:8000/api/user/display
+
+### Get Logged In User
+GET http://localhost:8000/api/user/displayById
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTg4NjFkMTQzZWNlNzBhNGM2YzI1MzEiLCJmaXJzdE5hbWUiOiJBZGVsIiwibGFzdE5hbWUiOiJOYW1hemkiLCJ1c2VyTmFtZSI6ImFkZWwub3Jvc2lhIiwiZW1haWwiOiJhZGVsX29yb3NpYUB5YWhvby5jb20iLCJpc0FkbWluIjpmYWxzZSwiaXNBY2NvdW50VmVyaWZpZWQiOmZhbHNlLCJwaG90byI6Imh0dHBzOi8vcmVzLmNsb3VkaW5hcnkuY29tL2RkcnVxa2J2Yi9pbWFnZS91cGxvYWQvdjE3MDI1MDQ2ODcvdWp6c2xkeGtvdXAwN2U2ZWwyeDEud2VicCIsImlhdCI6MTcwMzQ2MTAxOSwiZXhwIjoxNzAzNDYxMDQ5fQ.K6BINUyPxmJFR1bR1ym7Wma8Fq2_3qyRsmd5hgVV2eM
