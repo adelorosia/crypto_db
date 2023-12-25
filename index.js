@@ -17,7 +17,7 @@ const app=express()
 const port=process.env.PORT || 5001
 
 app.use(express.json())
-app.use(cors())
+app.use(cors({Credential:true,origin:"http://localhost:3000"}))
 app.use(cookieParser())
 
 
