@@ -15,7 +15,7 @@ const app = express();
 const port = process.env.PORT || 5001;
 
 app.use(express.json());
-app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
+app.use(cors({ credentials: true, origin: "https://orosia-crypto.vercel.app" }));
 app.use(cookieParser());
 
 app.use(userRouter);
