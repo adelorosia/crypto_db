@@ -1,30 +1,26 @@
-import express from "express"
-import dotenv from "dotenv"
-import cors from "cors"
-import cookieParser from "cookie-parser"
-import dbConnect from "./config/db.js"
-import userRouter from "./routes/userRouter.js"
-import { errorHandler, notFound } from "./middlewares/error/errorHandler.js"
+import express from "express";
+import dotenv from "dotenv";
+import cors from "cors";
+import cookieParser from "cookie-parser";
+import dbConnect from "./config/db.js";
+import userRouter from "./routes/userRouter.js";
+import { errorHandler, notFound } from "./middlewares/error/errorHandler.js";
 
-dotenv.config()
+dotenv.config();
 
-dbConnect()
+dbConnect();
 
-const app=express()
+const app = express();
 
+const port = process.env.PORT || 5001;
 
+app.use(express.json());
+app.use(cors({ credential: true, origin: "http://localhost:3000" }));
+app.use(cookieParser());
 
-const port=process.env.PORT || 5001
+app.use(userRouter);
 
-app.use(express.json())
-app.use(cors({Credential:true,origin:"http://localhost:3000"}))
-app.use(cookieParser())
+app.use(notFound);
+app.use(errorHandler);
 
-
-app.use(userRouter)
-
-app.use(notFound)
-app.use(errorHandler)
-
-app.listen(port,()=>console.log(`server is running on Port: ${port}`))
-
+app.listen(port, () => console.log(`server is running on Port: ${port}`));
